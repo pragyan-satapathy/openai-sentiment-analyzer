@@ -8,7 +8,7 @@ const openai = new OpenAI({
 
 async function analyzeSentiment(comment) {
   const response = await openai.chat.completions.create({
-    model: process.env.OPENROUTER_MODEL || "openai/gpt-3.5-turbo",
+    model: process.env.OPENROUTER_MODEL || "openai/gpt-3.5-turbo"
     temperature: parseFloat(process.env.MODEL_TEMPERATURE) || 0,
     messages: [
       { role: "system", content: SYSTEM_PROMPT.trim() },
